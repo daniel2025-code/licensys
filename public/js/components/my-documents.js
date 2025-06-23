@@ -239,14 +239,12 @@ const MyDocuments = {
 
         /* Cargar documentos */
         const loadDocuments = async () => {
-            console.log("Test");
             try {
                 loading.value = true;
                 const response = await apiFetch('/api/my-documents');
 
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data);
                     documents.value = data || [];
                 } else {
                     console.error('Error al cargar documentos');
